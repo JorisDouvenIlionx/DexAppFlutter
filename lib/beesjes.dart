@@ -48,7 +48,11 @@ class _BeesjesState extends State<Beesjes> {
               leading: Text(counters[i]['id'].toString()),
               title: Text(counters[i]['name']),
               // subtitle: Text(counters[i]['pokemon_v2_pokemonsprites']['sprites']),
-            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const BeesjesInfo())),));
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => BeesjesInfo(i: counters[i]['id']))),
+            ));
           });
     }
 
