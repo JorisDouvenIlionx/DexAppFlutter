@@ -14,5 +14,46 @@ class AbilityDetails extends StatelessWidget {
           title: (Text(ability.name ?? "No Name")),
         ),
         body: Center(child: Text(ability.effect ?? "No Effect")));
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
+        print("Coding principles not found");
   }
-}
+  }
+
