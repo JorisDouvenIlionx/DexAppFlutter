@@ -23,13 +23,13 @@ class Pokedex extends StatelessWidget {
               bottom: const TabBar(
                 tabs: [
                   Tab(icon: Icon(Icons.cruelty_free)),
-                  Tab(icon: Icon(Icons.add_home)),
+                  Tab(icon: Icon(Icons.local_fire_department)),
                 ],
               ),
               title: const Text('Advanced Pokédex'),
             ),
             body: const TabBarView(
-              children: [AbilityListView(), Beesjes()],
+              children: [Beesjes(), AbilityListView()],
             ),
           ),
         ),
