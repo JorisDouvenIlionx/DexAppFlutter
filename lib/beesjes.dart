@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/beesjes_info.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 const String readCounters = """
@@ -46,8 +47,8 @@ class _BeesjesState extends State<Beesjes> {
                 child: ListTile(
               leading: Text(counters[i]['id'].toString()),
               title: Text(counters[i]['name']),
-              // subtitle: Text(counters[i]['pokemon_v2_pokemonsprites']),
-            ));
+              // subtitle: Text(counters[i]['pokemon_v2_pokemonsprites']['sprites']),
+            onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const BeesjesInfo())),));
           });
     }
 
