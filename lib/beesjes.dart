@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 const String readCounters = """
-    query Pokemon {
-      allPokemon {
-        id
-        name
-        sprites{
-          front_default
+      query ExampleQuery {
+        pokemon_v2_pokemon {
+          name
+          id
+          pokemon_v2_pokemonsprites {
+            sprites
+          }
         }
       }
-    }
 """;
 
 class Beesjes extends StatefulWidget {
@@ -25,7 +25,7 @@ class _BeesjesState extends State<Beesjes> {
   Widget build(BuildContext context) {
     QueryOptions options = QueryOptions(
       document: gql(readCounters),
-      variables: const {'counterId': 42},
+      // variables: const {'counterId': 42},
       // pollInterval: const Duration(seconds: 10),
     );
 
@@ -37,16 +37,17 @@ class _BeesjesState extends State<Beesjes> {
       if (result.isLoading) {
         return const Text("Loading");
       }
-      List counters = result.data?['allPokemon'];
-      
+
+      var counters = result.data?['pokemon_v2_pokemon'];
       return ListView.builder(
           itemCount: counters.length,
           itemBuilder: (c, i) {
+            print(counters[i]);
             return Card(
                 child: ListTile(
               leading: Text(counters[i]['id'].toString()),
               title: Text(counters[i]['name']),
-              trailing: counters[i]['sprites']['front_default'],
+              // subtitle: Text(counters[i]['pokemon_v2_pokemonsprites']),
             ));
           });
     }

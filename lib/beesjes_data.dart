@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
-final hyperLink = HttpLink('https://dex-server.herokuapp.com/');
+final hyperLink = HttpLink('https://beta.pokeapi.co/graphql/v1beta/');
 
 class BeesjesData {
   // ignore: non_constant_identifier_names
