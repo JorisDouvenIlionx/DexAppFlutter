@@ -17,7 +17,7 @@ class Pokedex extends StatelessWidget {
       client: BeesjesData.GetGQLClient(),
       child: MaterialApp(
         home: DefaultTabController(
-          length: 3,
+          length: 2,
           child: Scaffold(
             appBar: AppBar(
               bottom: const TabBar(
