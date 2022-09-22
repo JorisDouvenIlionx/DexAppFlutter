@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'beesjes_data.dart';
 
 const String readCounters = """
     query readCounters(\$counterId: Int!) {
@@ -24,7 +22,7 @@ class _BeesjesState extends State<Beesjes> {
   Widget build(BuildContext context) {
     QueryOptions options = QueryOptions(
       document: gql(readCounters),
-      variables: {'counterId': 42},
+      variables: const {'counterId': 42},
       pollInterval: const Duration(seconds: 10),
     );
 
@@ -34,7 +32,7 @@ class _BeesjesState extends State<Beesjes> {
         return Text(result.exception.toString());
       }
       if (result.isLoading) {
-        return Text("Loading");
+        return const Text("Loading");
       }
 
       List counters = result.data?['counter'];
