@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/abilities_list_view.dart';
 import 'package:flutter_pokedex/Beesjes.dart';
-import 'package:flutter_pokedex/beesjesData.dart';
+import 'package:flutter_pokedex/beesjes_data.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() {
