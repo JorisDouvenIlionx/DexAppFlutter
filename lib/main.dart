@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/abilities.dart';
+import 'package:flutter_pokedex/abilities_list_view.dart';
 
 void main() {
   runApp(const Pokedex());
@@ -25,7 +25,7 @@ class Pokedex extends StatelessWidget {
           ),
           body: const TabBarView(
             children: [
-              Ability(),
+              AbilityListView(),
               Center(child: Text("Put every Ability here")),
             ],
           ),
