@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/abilities_list_view.dart';
 import 'package:flutter_pokedex/Beesjes.dart';
-import 'package:flutter_pokedex/beesjesData.dart';
+import 'package:flutter_pokedex/beesjes_data.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 void main() {
@@ -17,19 +17,19 @@ class Pokedex extends StatelessWidget {
       client: BeesjesData.GetGQLClient(),
       child: MaterialApp(
         home: DefaultTabController(
-          length: 3,
+          length: 2,
           child: Scaffold(
             appBar: AppBar(
               bottom: const TabBar(
                 tabs: [
                   Tab(icon: Icon(Icons.cruelty_free)),
-                  Tab(icon: Icon(Icons.add_home)),
+                  Tab(icon: Icon(Icons.local_fire_department)),
                 ],
               ),
               title: const Text('Advanced Pokédex'),
             ),
             body: const TabBarView(
-              children: [AbilityListView(), Beesjes()],
+              children: [Beesjes(), AbilityListView()],
             ),
           ),
         ),

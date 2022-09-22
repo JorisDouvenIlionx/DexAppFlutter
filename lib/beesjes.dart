@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'beesjesData.dart';
 
 const String readCounters = """
-    query readCounters(\$counterId: Int!) {
-        counter {
-            name
-            id
+    query Pokemon {
+      allPokemon {
+        id
+        name
+        sprites{
+          front_default
         }
+      }
     }
 """;
 
@@ -24,8 +25,8 @@ class _BeesjesState extends State<Beesjes> {
   Widget build(BuildContext context) {
     QueryOptions options = QueryOptions(
       document: gql(readCounters),
-      variables: {'counterId': 42},
-      pollInterval: const Duration(seconds: 10),
+      variables: const {'counterId': 42},
+      // pollInterval: const Duration(seconds: 10),
     );
 
     Widget builder(QueryResult result,
@@ -34,15 +35,19 @@ class _BeesjesState extends State<Beesjes> {
         return Text(result.exception.toString());
       }
       if (result.isLoading) {
-        return Text("Loading");
+        return const Text("Loading");
       }
-
-      List counters = result.data?['counter'];
-
+      List counters = result.data?['allPokemon'];
+      
       return ListView.builder(
-          itemCount: 894,
+          itemCount: counters.length,
           itemBuilder: (c, i) {
-            return Text(counters[i]['name']);
+            return Card(
+                child: ListTile(
+              leading: Text(counters[i]['id'].toString()),
+              title: Text(counters[i]['name']),
+              trailing: counters[i]['sprites']['front_default'],
+            ));
           });
     }
 
