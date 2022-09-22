@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'beesjes_data.dart'';
+import 'beesjes_data.dart';
 
 const String readCounters = """
     query readCounters(\$counterId: Int!) {
