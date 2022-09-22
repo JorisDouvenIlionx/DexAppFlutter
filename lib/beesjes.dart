@@ -42,7 +42,6 @@ class _BeesjesState extends State<Beesjes> {
       return ListView.builder(
           itemCount: counters.length,
           itemBuilder: (c, i) {
-            print(counters[i]);
             return Card(
                 child: ListTile(
               leading: Text(counters[i]['id'].toString()),
